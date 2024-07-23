@@ -77,14 +77,14 @@ WSGI_APPLICATION = "a_core.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "banco_db_6426",
-        "USER": "admin",
-        "PASSWORD": "b6lWhm85bIV9Hoj5BzCx2qwqJ1pvBH9e",
-        "HOST": "dpg-cqfsuedds78s73c55q60-a.oregon-postgres.render.com",
-        "PORT": "5432",
-    }    
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'koyebdb',
+        'USER': 'koyeb-adm',
+        'PASSWORD': 'CIP9EZHhv6DX',
+        'HOST': 'ep-lively-truth-a4r1286e.us-east-1.pg.koyeb.app',
+        'OPTIONS': {'sslmode': 'require'},
+    }
 }
 
 
