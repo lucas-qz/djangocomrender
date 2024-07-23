@@ -1,0 +1,12 @@
+<h2>{{ titulo }}</h2> <!-- vem d views.py/função 'def get_context_data'/context['titulo'] cada view passa um titulo diferente-->
+<p>Todos os campos obrigatórios</p>
+<hr>
+
+<form action="" method="post"> <!--action ñ precisa por pq o django controla isso-->
+    {% csrf_token %}           <!-- isso é obrigatorio em formularios django -->
+    {{ form.as_p }}  <!--* essa tag traz os campos da view que acionou essa pagina html (ver views.py)
+                         * dessa forma se acessar a rota (ver urls.py) ele aciona a view (ver views.py) que aciona essa pagina-->
+    <button type="submit" class="{{ cor_botao }}">{{ botao }}</button> 
+    <!-- {{ cor_botao }} e {{ botao }} vem de views.py/função 'def get_context_data' -->
+</form>
+<a href="{% url 'listar_musica2' %}"> Listar </a><a href="{% url 'cadastro_musica2' %}"> Cadastrar </a>      

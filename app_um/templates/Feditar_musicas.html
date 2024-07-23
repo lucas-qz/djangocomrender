@@ -1,0 +1,22 @@
+<!--#/////////////////////////////////////////////////////////////////////////////////////////////////-->
+<!--#---- USANDO FUNÇÕES PARA CRIAR AS VIEWS ------------->
+<form action="{% url 'valida_editar_musica' musica1.id %}" method="post"><!-- musica1.id é o campo 'id' do banco-->
+    {% csrf_token %}          <!-- isso é obrigatorio em formularios django -->
+  <div>
+    <h1>Editar Música</h1>
+    <p>Preencha este formulário para editar uma música.</p>
+
+    <label><b>Nome Música</b></label>
+    <input type="text" placeholder="Digite Nome Música" name="musica"  required value="{{ musica1.musica }}">
+
+    <label><b>Cantor</b></label>
+    <input type="text" placeholder="Digite Cantor" name="cantor"  required value="{{ musica1.cantor }}">
+
+    <label><b>Gênero</b></label>
+    <input type="text" placeholder="Digite Gênero" name="genero"  required value="{{ musica1.genero }}">
+
+    <button type="submit" class="registerbtn">Editar Música</button>
+  </div>
+</form>
+<a href="{% url 'lista_musicas' %}"> Listar </a><a href="{% url 'cadastro_musica' %}"> Cadastrar </a>
+<!--#/////////////////////////////////////////////////////////////////////////////////////////////////--> 

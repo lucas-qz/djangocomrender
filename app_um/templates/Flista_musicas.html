@@ -1,0 +1,23 @@
+<!--#/////////////////////////////////////////////////////////////////////////////////////////////////-->
+<!--#---- USANDO FUNÇÕES PARA CRIAR AS VIEWS ------------->
+<table>
+    <tr>
+      <th>Música</th>
+      <th>Cantor</th> 
+      <th>Gênero</th>
+      <th>Ações</th>
+    </tr>
+    {% for i in musica1 %}
+    <tr>
+        <td>{{ i.musica }}</td>
+        <td>{{ i.cantor }}</td>
+        <td>{{ i.genero }}</td>
+        <td>
+          <a href="{% url 'editar_musica' i.id %}">Editar</a>   <!-- i.id é o campo id do banco-->
+          <a href="{% url 'excluir_musica' i.id %}">Excluir</a> <!-- i.id é o campo id do banco-->
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{% url 'lista_musicas' %}"> Listar </a><a href="{% url 'cadastro_musica' %}"> Cadastrar </a>
+<!--#/////////////////////////////////////////////////////////////////////////////////////////////////-->  

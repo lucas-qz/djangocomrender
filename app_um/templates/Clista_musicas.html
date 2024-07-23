@@ -1,0 +1,28 @@
+<h2>{{ titulo }}</h2> <!-- vem d views.py/função 'def get_context_data'/context['titulo'] cada view passa um titulo diferente-->
+    <p>Veja a Lista de Campo</p>
+    <hr>
+
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Ações</th>
+    </tr>
+    <!-- esse 'object_list' é padrão do django e traz oque está no return da classe no 'models.py' (ver 'models.py')-->
+    {% for i in object_list %}
+    <tr>
+        <td>{{ i.musica }}</td>
+        <td>{{ i.cantor }}</td>
+        <td>{{ i.genero }}</td>
+        <td>
+            <a href="{% url 'editar_musica2' i.pk %}">Editar</a>   <!-- coloca pk nessa url - é o id -->
+            <a href="{% url 'deletar_musica2' i.pk %}">Excluir</a> <!-- coloca pk nessa url - é o id -->
+        </td>
+    </tr>     
+        {% empty %}  <!-- se tabela estiver vazia ele mostra a <td> abaixo -->
+    <tr>
+        <td>Nenhum campo registrado</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{% url 'listar_musica2' %}"> Listar </a><a href="{% url 'cadastro_musica2' %}"> Cadastrar </a>   

@@ -1,0 +1,22 @@
+<!--#/////////////////////////////////////////////////////////////////////////////////////////////////-->
+<!--#---- USANDO FUNÇÕES PARA CRIAR AS VIEWS ------------->
+<form action="{% url 'valida_cadastro_musica' %}" method="post">
+  {% csrf_token %}         <!-- isso é obrigatorio em formularios django -->
+    <div>
+      <h1>Cadastro Música</h1>
+      <p>Preencha este formulário para cadastrar uma música.</p>
+  
+      <label><b>Nome Música</b></label>
+      <input type="text" placeholder="Digite Nome Música" name="musica"  required>
+  
+      <label><b>Cantor</b></label>
+      <input type="text" placeholder="Digite Cantor" name="cantor"  required>
+  
+      <label><b>Gênero</b></label>
+      <input type="text" placeholder="Digite Gênero" name="genero"  required>
+  
+      <button type="submit" class="registerbtn">Cadastrar Música</button>
+    </div>
+</form>
+  <a href="{% url 'lista_musicas' %}"> Listar </a><a href="{% url 'cadastro_musica' %}"> Cadastrar </a>
+<!--#/////////////////////////////////////////////////////////////////////////////////////////////////-->  
